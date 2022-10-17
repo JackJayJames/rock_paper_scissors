@@ -32,7 +32,6 @@ function getRndInteger()
 function getComputerChoice()
 {
     let num = getRndInteger();
-    console.log(num);
     if(num == 0)
     {
         return "rock";
@@ -124,8 +123,6 @@ function game()
         player = getPlayerChoice();
         computer = getComputerChoice();
         result = playround(player, computer);
-        console.log(player + "    " + computer);
-        console.log(result);
         if(result == "player")
         {
             player_score++;
@@ -134,12 +131,6 @@ function game()
         {
             computer_score++;
         }
-        console.log(player_score + "   " + computer_score);
     }
     console.log(game_result(player_score, computer_score));
 }
-
-/*const player = getPlayerChoice();
-const computer = getComputerChoice();
-console.log(player + "    " + computer);
-console.log(playround(player, computer));*/
