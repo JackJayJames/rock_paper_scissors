@@ -96,6 +96,22 @@ function playround(player, computer)
     }
 }
 
+function game_result(player, computer)
+{
+    if(player > computer)
+    {
+        return "Player won";
+    }
+    else if(player < computer)
+    {
+        return "Computer won";
+    }
+    else if(player == computer)
+    {
+        return "It's a draw";
+    }
+}
+
 function game()
 {
     let player;
@@ -113,26 +129,14 @@ function game()
         if(result == "player")
         {
             player_score++;
-            if(player == 5)
-            {
-                console.log("Player won");
-                break;
-            }
         }
         else if(result == "computer")
         {
             computer_score++;
-            if(computer == 5)
-            {
-                console.log("Computer won");
-                break;
-            }
         }
-        else if(result == "draw")
-        {
-            i--;
-        }
+        console.log(player_score + "   " + computer_score);
     }
+    console.log(game_result(player_score, computer_score));
 }
 
 /*const player = getPlayerChoice();
