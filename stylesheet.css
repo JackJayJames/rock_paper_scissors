@@ -1,7 +1,17 @@
 #over-container {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border:1px solid red;
     display:flex;
+    flex-wrap: wrap;
 }
-
 #over-container > * {
     border: 1px solid red;
+    flex-grow: 1;
+}
+#div-start-button {
+    flex: 0 1 100%;
+    display: flex;
+    justify-content: center;
 }
