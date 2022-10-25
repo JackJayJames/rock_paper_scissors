@@ -5,6 +5,7 @@
     border:1px solid red;
     display:flex;
     flex-wrap: wrap;
+    gap: 1.5%;
 }
 #over-container > * {
     border: 1px solid red;
@@ -14,4 +15,24 @@
     flex: 0 1 100%;
     display: flex;
     justify-content: center;
+}
+.div-score-container {
+    flex-basis: auto;
+}
+#game-container {
+    flex: 1 0 35%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+#game-container > * {
+    border: 1px solid red;
+}
+#game-container > :nth-child(1) {
+    flex: 0 1 100%;
+    text-align: center;
+}
+#game-container > :nth-child(5) {
+    flex: 0 1 100%;
+    text-align: center;
 }
