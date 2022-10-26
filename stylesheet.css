@@ -9,7 +9,7 @@
 }
 #over-container > * {
     border: 1px solid red;
-    flex-grow: 1;
+    flex: 1 0 auto;
 }
 #div-start-button {
     flex: 0 1 100%;
@@ -31,8 +31,8 @@
     border: 1px solid red;
 }
 #game-container button {
-    flex: 0 1 30%;
-    height: 30%;
+    flex: 0 1 10em;
+    height: 10em;
 }
 #game-container > :nth-child(1) {
     flex: 0 1 100%;
