@@ -27,6 +27,9 @@ body {
     font-size: 1.5em;
     background-color: dimgrey;
     border: .2em solid green;
+    border-radius: .5em;
+    box-shadow: .5em green;
+}
 .div-score-container {
     flex-basis: auto;
     text-align: center;
