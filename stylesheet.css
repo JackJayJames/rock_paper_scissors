@@ -8,6 +8,8 @@ body {
     display:flex;
     flex-wrap: wrap;
     gap: 1.5%;
+    border-bottom: .4em solid white;
+    border-radius: 2.1em;
     /*background-color: white;*/
 }
 #over-container > * {
@@ -19,6 +21,7 @@ body {
     display: flex;
     justify-content: center;
     background-color: black;
+    border-bottom: .4em solid white;
     margin-top: .8em;
     margin-bottom: .8em;
 }
@@ -32,9 +35,11 @@ body {
 }
 .div-score-container {
     flex-basis: auto;
+    flex: 1 0 auto;
     text-align: center;
     text-align: middle;
-    border: .5em solid #009600;
+    border-left: .5em solid white;
+    border-right: .5em solid white;
     border-radius: 1em;
     background-color: #030c03;
 }
@@ -45,7 +50,9 @@ body {
     justify-content: center;
     padding: 2%;
     gap: 3%;
-    border: .5em solid #009600;
+    /*border: .5em solid #009600;*/
+    border-left: .5em solid white;
+    border-right: .5em solid white;
     border-radius: 1em;
     background-color: #030c03;
 }
@@ -91,4 +98,6 @@ body {
     margin: 2em;
     flex: 0 1 10em;
     height: 9em;
+    border: .5em solid white;
+    border-radius: 1.5em;
 }
