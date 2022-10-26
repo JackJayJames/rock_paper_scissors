@@ -2,10 +2,9 @@ body {
     background-color: black;
 }
 #over-container {
-    width: 70%;
+    width: 75%;
     margin-left: 15%;
     margin-right: 15%;
-    border:1px solid red;
     display:flex;
     flex-wrap: wrap;
     gap: 1.5%;
@@ -14,26 +13,30 @@ body {
 #over-container > * {
     /*border: 1px solid red;*/
     flex: 1 0 auto;
-    background-color: white;
 }
 #div-start-button {
     flex: 0 1 100%;
     display: flex;
     justify-content: center;
     background-color: black;
+    margin-top: .8em;
+    margin-bottom: .8em;
 }
 #start-game-button {
     color: white;
     font-size: 1.5em;
-    background-color: dimgrey;
-    border: .2em solid green;
+    background-color: #030c03;
+    border: .2em solid #009600;
     border-radius: .5em;
-    box-shadow: .5em green;
+    text-shadow: -2px 0px black, 0px -2px black, 2px 0px black, 0px 2px black;
 }
 .div-score-container {
     flex-basis: auto;
     text-align: center;
     text-align: middle;
+    border: .5em solid #009600;
+    border-radius: 1em;
+    background-color: #030c03;
 }
 #game-container {
     flex: 1 0 35%;
@@ -42,9 +45,9 @@ body {
     justify-content: center;
     padding: 2%;
     gap: 3%;
-}
-#game-container > * {
-    border: 1px solid red;
+    border: .5em solid #009600;
+    border-radius: 1em;
+    background-color: #030c03;
 }
 #game-container button {
     flex: 0 1 10em;
@@ -52,13 +55,37 @@ body {
 }
 #game-container > :nth-child(1) {
     flex: 0 1 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: .4em;
+    margin-bottom: 1em;
+    border-bottom: .2em solid white;
+    border-radius: .5em;
+    color: white;
+    font-size: 1.5em;
+}
+#game-container > :nth-child(1) > * {
+    width: 5em;
     text-align: center;
-    margin-bottom: 2em;
+    border-top: .2em solid white;
+    border-radius: .5em;
 }
 #game-container > :nth-child(5) {
     flex: 0 1 100%;
+    display: flex;
+    justify-content: center;
     text-align: center;
-    margin-top: 2em;
+    margin-top: 1.5em;
+    color: white;
+    border-top: .2em solid white;
+    border-radius: .5em;
+    font-size: 1.5em;
+}
+#game-container > :nth-child(5) > * {
+    width: 8em;
+    text-align: center;
+    border-bottom: .2em solid white;
+    border-radius: .5em;
 }
 #computers-choice {
     margin: 2em;
