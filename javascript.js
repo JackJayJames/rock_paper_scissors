@@ -137,4 +137,4 @@ function game() /*This function gets called when html is loaded*/
 }                                                               /*game_result function gets end result of the game*/
 
 const start_game = document.querySelector('#start-game-button');
-start_game = addEventListener('click', () => game());
+start_game.addEventListener('click', game);
