@@ -142,5 +142,5 @@ start_game.addEventListener('click', game);
 
 const play_buttons = document.querySelectorAll('.play_button');
 play_buttons.forEach(pressed => pressed.addEventListener('click', function (e) {
-    console.log(e.target.textContent);
+    console.log(e.target.name);
 }));
