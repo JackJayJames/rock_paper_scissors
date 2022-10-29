@@ -42,6 +42,7 @@ body {
     border-right: .5em solid white;
     border-radius: 1em;
     background-color: #030c03;
+    color: white;
 }
 #game-container {
     flex: 1 0 35%;

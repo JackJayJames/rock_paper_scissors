@@ -139,3 +139,8 @@ function game() /*This function gets called when html is loaded*/
 
 const start_game = document.querySelector('#start-game-button');
 start_game.addEventListener('click', game);
+
+const play_buttons = document.querySelectorAll('.play_button');
+play_buttons.forEach(pressed => pressed.addEventListener('click', function (e) {
+    console.log(e.target.textContent);
+}));
