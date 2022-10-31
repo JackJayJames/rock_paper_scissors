@@ -1,6 +1,6 @@
 :root {
-    --border-color: rgb(89, 185, 0);
-    --border-color-trans: orange;
+    --border-color: #067D68;
+    --border-color-trans: #E3FF73;
     --background-color: black;
 }
 
@@ -63,9 +63,9 @@ body {
     border-radius: 1em;
     /*background-color: #030c03;*/
 }
-#game-container button {
-    flex: 0 1 10em;
-    height: 10em;
+#game-container img {
+    flex: 0 1 7em;
+    height: 7em;
 }
 #game-container > :nth-child(1) {
     flex: 0 1 100%;
@@ -111,11 +111,12 @@ body {
 }
 .play_button {
     border: .5em solid var(--border-color);
-    width: 50px;
-    height: 50px;
+    border-image: linear-gradient(120deg, var(--border-color), var(--border-color-trans));
+    border-image-slice: 30;
 }
 .play_button:hover {
-    border: .7em solid var(--border-color-trans);
+    border-image: linear-gradient(var(--border-color-trans), var(--border-color));
+    border-image-slice: 10;
     scale: 1.05;
     transition: .15s;
 }

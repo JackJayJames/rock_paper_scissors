@@ -111,6 +111,13 @@ function game_result(player, computer)  /*gets result of the game*/
     }
 }
 
+function showResult(result)
+{
+    const output = document.getElementById("#computers_choice");
+    const image = document.createElement("img");
+    output.appendChild(image);
+}
+
 function game() /*This function gets called when html is loaded*/
 {
     let player;
@@ -133,8 +140,9 @@ function game() /*This function gets called when html is loaded*/
             computer_score++;
         }
     }
+    showResult(game_result(player_score, computer_score))
     document.getElementById('computers-choice').textContent = game_result(player_score, computer_score);
-    //console.log(game_result(player_score, computer_score));     /*Current output of the code, after all 5 rounds*/
+    console.log(game_result(player_score, computer_score));     /*Current output of the code, after all 5 rounds*/
 }                                                               /*game_result function gets end result of the game*/
 
 const start_game = document.querySelector('#start-game-button');
