@@ -107,5 +107,15 @@ body {
     border-radius: 1.5em;
     color: white;
 }
-
+.play_button {
+    border: .5em solid var(--border-color);
+    background-color: #030c03;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.play_button > * {
+    height: 98%;
+    width: 105%;
+}
 
