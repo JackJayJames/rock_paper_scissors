@@ -1,9 +1,11 @@
 :root {
-    --border-color: #009600;
+    --border-color: rgb(89, 185, 0);
+    --border-color-trans: orange;
+    --background-color: black;
 }
 
 body {
-    background-color: black;
+    background-color: var(--background-color);
 }
 #over-container {
     width: 75%;
@@ -24,7 +26,7 @@ body {
     flex: 0 1 100%;
     display: flex;
     justify-content: center;
-    background-color: black;
+    background-color: var(--background-color);
     border-bottom: .4em solid var(--border-color);
     margin-top: .8em;
     margin-bottom: .8em;
@@ -32,7 +34,7 @@ body {
 #start-game-button {
     color: white;
     font-size: 1.5em;
-    background-color: #030c03;
+    background-color: var(--background-color);
     border: .2em solid var(--border-color);
     border-radius: .5em;
     /*text-shadow: -2px 0px black, 0px -2px black, 2px 0px black, 0px 2px black;*/
@@ -45,7 +47,7 @@ body {
     border-left: .5em solid var(--border-color);
     border-right: .5em solid var(--border-color);
     border-radius: 1em;
-    background-color: #030c03;
+    /*background-color: #030c03;*/
     color: white;
 }
 #game-container {
@@ -59,7 +61,7 @@ body {
     border-left: .5em solid var(--border-color);
     border-right: .5em solid var(--border-color);
     border-radius: 1em;
-    background-color: #030c03;
+    /*background-color: #030c03;*/
 }
 #game-container button {
     flex: 0 1 10em;
@@ -109,13 +111,12 @@ body {
 }
 .play_button {
     border: .5em solid var(--border-color);
-    background-color: #030c03;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 50px;
+    height: 50px;
 }
-.play_button > * {
-    height: 98%;
-    width: 105%;
+.play_button:hover {
+    border: .7em solid var(--border-color-trans);
+    scale: 1.05;
+    transition: .15s;
 }
 
