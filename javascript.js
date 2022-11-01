@@ -1,5 +1,7 @@
 console.log("here"); /*Just makes sure that the code is working*/
 
+
+
 function getPlayerChoice() /*Gets input from user, and checks the validity of the input, also makes the input case insensitiv*/
 {
     while(true)
@@ -111,11 +113,29 @@ function game_result(player, computer)  /*gets result of the game*/
     }
 }
 
-function showResult(result)
+/*function showResult(result)
 {
-    const output = document.getElementById("#computers_choice");
-    const image = document.createElement("img");
+    const output = document.getElementById("#computers-choice");
+    //const image = document.createElement("img");
+    var image = new Image();                                        //zatím nefunguje
+    image.src = "/images/paper.png";
     output.appendChild(image);
+}*/
+
+function hideGame()
+{
+    let game_container = document.querySelectorAll("#game-container > *");
+    game_container.forEach(function (e) {
+        e.style.display = "none";
+    });
+}
+
+function show_game()
+{
+    let game_container = document.querySelectorAll("#game-container > *");
+    game_container.forEach(function (e) {
+        e.style.display = "block";
+    });
 }
 
 function game() /*This function gets called when html is loaded*/
@@ -140,13 +160,13 @@ function game() /*This function gets called when html is loaded*/
             computer_score++;
         }
     }
-    showResult(game_result(player_score, computer_score))
+    //showResult(game_result(player_score, computer_score)) //not working yet
     document.getElementById('computers-choice').textContent = game_result(player_score, computer_score);
     console.log(game_result(player_score, computer_score));     /*Current output of the code, after all 5 rounds*/
 }                                                               /*game_result function gets end result of the game*/
 
 const start_game = document.querySelector('#start-game-button');
-start_game.addEventListener('click', game);
+start_game.addEventListener('click', show_game);
 
 const play_buttons = document.querySelectorAll('.play_button');
 play_buttons.forEach(pressed => pressed.addEventListener('click', function (e) {

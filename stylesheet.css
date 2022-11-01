@@ -57,6 +57,7 @@ body {
     justify-content: center;
     padding: 2%;
     gap: 3%;
+    min-height: 31em;
     /*border: .5em solid #009600;*/
     border-left: .5em solid var(--border-color);
     border-right: .5em solid var(--border-color);
