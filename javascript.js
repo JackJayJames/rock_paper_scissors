@@ -1,6 +1,10 @@
 console.log("here"); /*Just makes sure that the code is working*/
 
-
+var Rock_Paper_Scissors = {                 /*Declering necesery variables*/
+    player_score: 0,
+    computer_score: 0,
+    draw_score: 0
+};
 
 function getPlayerChoice() /*Gets input from user, and checks the validity of the input, also makes the input case insensitiv*/
 {
@@ -47,8 +51,7 @@ function getComputerChoice()    /*Decides what computer playes by random number*
         return "scissors";
     }
 }
-
-function playround(player, computer)    /*Compares players and computers input, and decides winner of each round*/
+function playRound_result(player, computer)
 {
     if(player == "rock")
     {
@@ -97,33 +100,49 @@ function playround(player, computer)    /*Compares players and computers input, 
     }
 }
 
-function game_result(player, computer)  /*gets result of the game*/
+function playRound(player)    /*Compares players and computers input, and decides winner of each round*/
 {
-    if(player > computer)
+    const computer = getComputerChoice();
+    Rock_Paper_Scissors[`${playRound_result(player.target.alt, computer)}_score`]++;
+    console.log(Rock_Paper_Scissors);
+    if((Rock_Paper_Scissors.player_score === 5)||(Rock_Paper_Scissors.computer_score === 5))
     {
-        return "Player won";
-    }
-    else if(player < computer)
-    {
-        return "Computer won";
-    }
-    else if(player == computer)
-    {
-        return "It's a draw";
+        game_result();
     }
 }
 
-/*function showResult(result)
+function game_result()  /*gets result of the game*/
 {
-    const output = document.getElementById("#computers-choice");
+    if(Rock_Paper_Scissors.player_score > Rock_Paper_Scissors.computer_score)
+    {
+        showGameResult("Player");
+    }
+    else
+    {
+        showGameResult("Computer");
+    }
+}
+
+function showGameResult(result)
+{
+   /* const output = document.getElementById("#computers-choice");
     //const image = document.createElement("img");
     var image = new Image();                                        //zatím nefunguje
     image.src = "/images/paper.png";
-    output.appendChild(image);
-}*/
+    output.appendChild(image);*/
+    hideGame();
+    console.log(result);
+}
+
+function zeroGame()
+{
+    Rock_Paper_Scissors.player_score = 0;
+    Rock_Paper_Scissors.computer_score = 0;
+}
 
 function hideGame()
 {
+    zeroGame();
     let game_container = document.querySelectorAll("#game-container > *");
     game_container.forEach(function (e) {
         e.style.display = "none";
@@ -134,41 +153,37 @@ function show_game()
 {
     let game_container = document.querySelectorAll("#game-container > *");
     game_container.forEach(function (e) {
-        e.style.display = "block";
+        e.style.display = "flex";
     });
 }
 
-function game() /*This function gets called when html is loaded*/
-{
-    let player;
-    let computer;
-    let result;                 /*Declering necesery variables*/
-    let player_score = 0;
-    let computer_score = 0;
-    for(let i = 0; i < 5; i++)      /*Loop is used, so the game is has 5 rounds*/
-    {
-        player = getPlayerChoice();     /*This function gets input from user*/
-        computer = getComputerChoice();     /*This function gets random input from computer*/
-        result = playround(player, computer);   /*This funkcion playes a round*/
-        console.log(result); /*Outputs winner of each round*/
-        if(result == "player")  /*This if and else if statements counts score, of each round played*/
-        {
-            player_score++;
+/*function game() /*This function gets called when html is loaded*/
+//{
+    //for(let i = 0; i < 5; i++)      /*Loop is used, so the game is has 5 rounds*/
+    /*{
+        Rock_Paper_Scissors.player = getPlayerChoice();     /*This function gets input from user*/
+        /*Rock_Paper_Scissors.computer = getComputerChoice();     /*This function gets random input from computer*/
+        /*result = playround(Rock_Paper_Scissors.player, Rock_Paper_Scissors.computer);   /*This funkcion playes a round*/
+        /*console.log(result); /*Outputs winner of each round*/
+        /*if(Rock_Paper_Scissors.result == "player")  /*This if and else if statements counts score, of each round played*/
+        /*{
+            Rock_Paper_Scissors.player_score++;
         }
-        else if(result == "computer")
+        else if(Rock_Paper_Scissors.result == "computer")
         {
-            computer_score++;
+            Rock_Paper_Scissors.computer_score++;
         }
     }
     //showResult(game_result(player_score, computer_score)) //not working yet
-    document.getElementById('computers-choice').textContent = game_result(player_score, computer_score);
-    console.log(game_result(player_score, computer_score));     /*Current output of the code, after all 5 rounds*/
-}                                                               /*game_result function gets end result of the game*/
+    document.getElementById('computers-choice').textContent = game_result(Rock_Paper_Scissors.player_score, Rock_Paper_Scissors.computer_score);
+    console.log(game_result(Rock_Paper_Scissors.player_score, Rock_Paper_Scissors.computer_score));     /*Current output of the code, after all 5 rounds*/
+//}                                                          /*game_result function gets end result of the game*/
 
 const start_game = document.querySelector('#start-game-button');
 start_game.addEventListener('click', show_game);
 
 const play_buttons = document.querySelectorAll('.play_button');
-play_buttons.forEach(pressed => pressed.addEventListener('click', function (e) {
+/*play_buttons.forEach(pressed => pressed.addEventListener('click', function (e) {
     console.log(e.target.alt);
-}));
+}));*/
+play_buttons.forEach(pressed => pressed.addEventListener("click", e => playRound(e)));
