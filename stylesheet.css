@@ -108,7 +108,8 @@ body {
     height: 9em;
     border: .5em solid var(--border-color);
     border-radius: 1.5em;
-    color: white;
+    justify-content: center;
+    align-items: center;
 }
 .play_button {
     border: .5em solid var(--border-color);
@@ -120,5 +121,9 @@ body {
     border-image-slice: 10;
     scale: 1.05;
     transition: .15s;
+}
+
+#game_result {
+    display: "none";
 }
 

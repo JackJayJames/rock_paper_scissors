@@ -115,12 +115,21 @@ function show_computers_play(play)
     }
 }
 
+function show_score()
+{
+    const player_score = document.querySelector("#player-score");
+    const computer_score = document.querySelector("#computer-score");
+    player_score.textContent = Rock_Paper_Scissors.player_score;
+    computer_score.textContent = Rock_Paper_Scissors.computer_score;
+}
+
 function playRound(player)    /*Compares players and computers input, and decides winner of each round*/
 {
     const computer = getComputerChoice();
     show_computers_play(computer);
     Rock_Paper_Scissors[`${playRound_result(player.target.alt, computer)}_score`]++;
     console.log(Rock_Paper_Scissors);
+    show_score();
     if((Rock_Paper_Scissors.player_score === 5)||(Rock_Paper_Scissors.computer_score === 5))
     {
         game_result();
