@@ -150,12 +150,13 @@ function game_result()  /*gets result of the game*/
 
 function showGameResult(result)
 {
-   /* const output = document.getElementById("#computers-choice");
-    //const image = document.createElement("img");
-    var image = new Image();                                        //zatím nefunguje
-    image.src = "/images/paper.png";
-    output.appendChild(image);*/
     hideGame();
+    const output = document.querySelector("#game-container");
+    const img_result = new Image();
+    img_result.alt = result;
+    img_result.style = "color: white";
+    img_result.id = "end_result";
+    output.appendChild(img_result);
     console.log(result);
 }
 
@@ -168,6 +169,10 @@ function zeroGame()
 function hideGame()
 {
     zeroGame();
+    if(document.querySelector("#end_result") != null)
+    {
+        document.querySelector("#end_result").remove();
+    }
     let game_container = document.querySelectorAll("#game-container > *");
     game_container.forEach(function (e) {
         e.style.display = "none";
