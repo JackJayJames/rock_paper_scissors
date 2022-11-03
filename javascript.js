@@ -151,12 +151,28 @@ function showGameResult(result)
 {
     hideGame();
     const output = document.querySelector("#game-container");
+
+    const gm_result = document.createElement("div");
+    gm_result.id = "end_result";
+    gm_result.style = "display: flex; flex-direction: column; justify-content: center; align-items: center";
+    //gm_result.style = "flex"
+
+    //const gm_result_text = document.c
+
     const img_result = new Image();
     img_result.alt = result;
     img_result.src = `/images/${result}.jpg`;
-    img_result.style = "color: white";
-    img_result.id = "end_result";
-    output.appendChild(img_result);
+    img_result.style = "color: white; width: 15em; height: 13em; border: .5em solid var(--border-color); border-radius: .5em";
+
+    //img_result.id = "end_result";
+
+    const gm_result_text = document.createElement("h1");
+    gm_result_text.textContent = `${result} has won!`;
+    gm_result_text.style = "color: white";
+
+    gm_result.appendChild(img_result);
+    gm_result.appendChild(gm_result_text);
+    output.appendChild(gm_result);
     console.log(result);
 }
 
@@ -179,7 +195,9 @@ function hideGame()
 function show_game()
 {
     if(document.querySelector("#end_result") != null)
+    {
         document.querySelector("#game-container").removeChild(document.querySelector("#game-container").lastChild);
+    }
     let game_container = document.querySelectorAll("#game-container > *");
     game_container.forEach(function (e) {
         e.style.display = "flex";
