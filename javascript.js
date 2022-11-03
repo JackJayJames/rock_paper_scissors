@@ -113,6 +113,8 @@ function show_computers_play(play)
     {
         comChoice.firstChild.src = `/images/${play}.png`;
     }
+    comChoice.style = "display: flex; justify-content: center; align-items: center; border: .8em solid orange";
+    setTimeout(comChoice.style = "border: .5em solid var(--border-color)", 500);
 }
 
 function show_score()
