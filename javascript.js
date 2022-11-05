@@ -126,11 +126,29 @@ document.querySelector("#computers-choice").style = "display: flex; justify-cont
     }
 }
 
+function get_shadow_color()
+{
+    if(arguments[0] === 0) return "var(--border-color)";
+    if(arguments[0] === 1) return "lightgreen";
+    if(arguments[0] === 2) return "yellow";
+    if(arguments[0] === 3) return "orange";
+    if(arguments[0] === 4) return "red";
+}
+
 function change_size_of_score_containers()
 {
     const score_containers = document.querySelectorAll(".div-score-container");
-    score_containers[0].style.minHeight = `${Rock_Paper_Scissors.player_score*6 + 10}em`;
-    score_containers[1].style.minHeight = `${Rock_Paper_Scissors.computer_score*6 + 10}em`;
+    const score_text_containers = document.querySelectorAll(".div-score-container > :nth-child(2)");
+
+    score_containers[0].style.minHeight = `${Rock_Paper_Scissors.player_score*5.8 + 10}em`;
+    score_containers[0].style.boxShadow = ` 0px 0px var(--shadow-blur) var(--shadow-spread-radius) ${get_shadow_color(Rock_Paper_Scissors.player_score)}`;
+    score_text_containers[0].style.padding = `${Rock_Paper_Scissors.player_score*.5 + 2}em 0em`;
+    score_text_containers[0].style.fontSize = `${Rock_Paper_Scissors.player_score*.4+1}em`;
+
+    score_containers[1].style.minHeight = `${Rock_Paper_Scissors.computer_score*5.8 + 10}em`;
+    score_containers[1].style.boxShadow = ` 0px 0px var(--shadow-blur) var(--shadow-spread-radius) ${get_shadow_color(Rock_Paper_Scissors.computer_score)}`;
+    score_text_containers[1].style.padding = `${Rock_Paper_Scissors.computer_score*.5 + 2}em 0em`;
+    score_text_containers[1].style.fontSize = `${Rock_Paper_Scissors.computer_score*.4+1}em`;
 }
 
 function show_score()
@@ -206,9 +224,19 @@ function hideGame()
         e.style.display = "none";
     });
 }
+ 
+function button_click_animation()
+{
+    const start_button = document.querySelector("#start-game-button");
+    start_button.addEventListener("transitionend", function (e) {
+        start_button.classList.remove("start-button-animation");
+    })
+    start_button.classList.add("start-button-animation");
+}
 
 function show_game()
 {
+    button_click_animation();
     if(document.querySelector("#end_result") != null)
     {
         document.querySelector("#game-container").removeChild(document.querySelector("#game-container").lastChild);

@@ -16,32 +16,29 @@ body {
     display:flex;
     flex-wrap: wrap;
     gap: 1.5%;
-    /*border: 1px dotted red;
-    /*border-bottom: .4em solid var(--border-color);
-    border-radius: 2.1em;*/
-    /*background-color: white;*/
 }
-/*#over-container > * {
-    border: 1px solid red;
-    flex: 1 0 auto;
-}*/
+
 #div-start-button {
     flex: 0 1 100%;
     display: flex;
     justify-content: center;
     background-color: var(--background-color);
-    /*border-bottom: .4em solid var(--border-color);*/
     margin-top: .8em;
     margin-bottom: .8em;
 }
+
 #start-game-button {
     color: white;
     font-size: 1.5em;
     background-color: var(--background-color);
     border: .2em solid var(--border-color);
     border-radius: .5em;
-    /*text-shadow: -2px 0px black, 0px -2px black, 2px 0px black, 0px 2px black;*/
 }
+.start-button-animation {
+    transition: box-shadow .02s ease;
+    box-shadow: 0px 0px 1em 10px var(--border-color);
+}
+
 .div-score-container {
     flex-basis: auto;
     flex-shrink: 1;
@@ -52,28 +49,12 @@ body {
     box-shadow: 0px 0px var(--shadow-blur) var(--shadow-spread-radius) var(--border-color);
     border-radius: 1em;
     color: white;
-    transition: .3s;
-}
-
-.div-score-container::after {
-    flex-basis: auto;
-    flex-shrink: 1;
-    min-width: 12em;
-    max-height: 10em;
-    text-align: center;
-    text-align: middle;
-    /*box-shadow: 0px 0px var(--shadow-blur) var(--shadow-spread-radius) var(--border-color);*/
-    border-radius: 1em;
-    color: white;
-    content: "";
-    clear: both;
-    display: table;
+    transition: box-shadow 1s ease, .1s;
 }
 
 .div-score-container > :nth-child(2) {
-    border: 1px solid red;
     min-height: 1em;
-    padding: 2em 0em;
+    font-size: 1em;
 }
 
 #game-container {
