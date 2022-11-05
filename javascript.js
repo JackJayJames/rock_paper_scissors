@@ -100,6 +100,11 @@ function playRound_result(player, computer)
     }
 }
 
+/*function computers_play_animation(element)
+{
+    console.log(element);
+}*/
+
 function show_computers_play(play)
 {
     let comChoice = document.querySelector("#computers-choice");
@@ -113,8 +118,20 @@ function show_computers_play(play)
     {
         comChoice.firstChild.src = `/images/${play}.png`;
     }
-    comChoice.style = "display: flex; justify-content: center; align-items: center; border: .8em solid orange";
-    setTimeout(comChoice.style = "border: .5em solid var(--border-color)", 500);
+    //comChoice.style = "display: flex; justify-content: center; align-items: center; border: .8em solid orange";
+    if((Rock_Paper_Scissors.player_score < 5) && (Rock_Paper_Scissors.computer_score <5))
+    {
+        comChoice.style = "display: flex; justify-content: center; align-items: center; border: .8em solid orange";
+        setTimeout(() => {
+document.querySelector("#computers-choice").style = "display: flex; justify-content: center;align-items: center;border: .5em solid var(--border-color)"
+}, 100);
+    }
+    else
+    {
+        comChoice.style = "display: none";
+    }
+    //setTimeout(computers_play_animation(comChoice), 5000);
+    //comChoice.style = "border: .5em solid var(--border-color)"
 }
 
 function show_score()
@@ -128,8 +145,9 @@ function show_score()
 function playRound(player)    /*Compares players and computers input, and decides winner of each round*/
 {
     const computer = getComputerChoice();
-    show_computers_play(computer);
+    //show_computers_play(computer);
     Rock_Paper_Scissors[`${playRound_result(player.target.alt, computer)}_score`]++;
+    show_computers_play(computer);
     show_score();
     if((Rock_Paper_Scissors.player_score === 5)||(Rock_Paper_Scissors.computer_score === 5))
     {
@@ -186,6 +204,7 @@ function zeroGame()
 
 function hideGame()
 {
+    clearTimeout();
     zeroGame();
     show_score();
     let game_container = document.querySelectorAll("#game-container > *");
