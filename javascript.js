@@ -100,11 +100,6 @@ function playRound_result(player, computer)
     }
 }
 
-/*function computers_play_animation(element)
-{
-    console.log(element);
-}*/
-
 function show_computers_play(play)
 {
     let comChoice = document.querySelector("#computers-choice");
@@ -118,7 +113,6 @@ function show_computers_play(play)
     {
         comChoice.firstChild.src = `/images/${play}.png`;
     }
-    //comChoice.style = "display: flex; justify-content: center; align-items: center; border: .8em solid orange";
     if((Rock_Paper_Scissors.player_score < 5) && (Rock_Paper_Scissors.computer_score <5))
     {
         comChoice.style = "display: flex; justify-content: center; align-items: center; border: .8em solid orange";
@@ -130,8 +124,6 @@ document.querySelector("#computers-choice").style = "display: flex; justify-cont
     {
         comChoice.style = "display: none";
     }
-    //setTimeout(computers_play_animation(comChoice), 5000);
-    //comChoice.style = "border: .5em solid var(--border-color)"
 }
 
 function show_score()
@@ -175,16 +167,11 @@ function showGameResult(result)
     const gm_result = document.createElement("div");
     gm_result.id = "end_result";
     gm_result.style = "display: flex; flex-direction: column; justify-content: center; align-items: center";
-    //gm_result.style = "flex"
-
-    //const gm_result_text = document.c
 
     const img_result = new Image();
     img_result.alt = result;
     img_result.src = `/images/${result}.jpg`;
-    img_result.style = "color: white; width: 15em; height: 13em; border: .5em solid var(--border-color); border-radius: .5em";
-
-    //img_result.id = "end_result";
+    img_result.style = "color: white; width: 15em; height: 13em; border: .5em solid var(--border-color); border-radius: .5em";;
 
     const gm_result_text = document.createElement("h1");
     gm_result_text.textContent = `${result} has won!`;

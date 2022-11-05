@@ -14,8 +14,9 @@ body {
     display:flex;
     flex-wrap: wrap;
     gap: 1.5%;
-    border-bottom: .4em solid var(--border-color);
-    border-radius: 2.1em;
+    border: 1px dotted red;
+    /*border-bottom: .4em solid var(--border-color);
+    border-radius: 2.1em;*/
     /*background-color: white;*/
 }
 #over-container > * {
@@ -27,7 +28,7 @@ body {
     display: flex;
     justify-content: center;
     background-color: var(--background-color);
-    border-bottom: .4em solid var(--border-color);
+    /*border-bottom: .4em solid var(--border-color);*/
     margin-top: .8em;
     margin-bottom: .8em;
 }
@@ -44,8 +45,9 @@ body {
     flex: 1 0 auto;
     text-align: center;
     text-align: middle;
-    border-left: .5em solid var(--border-color);
-    border-right: .5em solid var(--border-color);
+    border: 1px dotted red;
+    /*border-left: .5em solid var(--border-color);
+    border-right: .5em solid var(--border-color);*/
     border-radius: 1em;
     /*background-color: #030c03;*/
     color: white;
@@ -58,9 +60,10 @@ body {
     padding: 2%;
     gap: 3%;
     min-height: 31em;
+    border: 1px dotted red;
     /*border: .5em solid #009600;*/
-    border-left: .5em solid var(--border-color);
-    border-right: .5em solid var(--border-color);
+    /*border-left: .5em solid var(--border-color);
+    border-right: .5em solid var(--border-color);*/
     border-radius: 1em;
     /*background-color: #030c03;*/
 }
