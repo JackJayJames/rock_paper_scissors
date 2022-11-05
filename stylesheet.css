@@ -2,6 +2,8 @@
     --border-color: #067D68;
     --border-color-trans: #E3FF73;
     --background-color: black;
+    --shadow-blur: .3em;
+    --shadow-spread-radius: .1em;
 }
 
 body {
@@ -14,15 +16,15 @@ body {
     display:flex;
     flex-wrap: wrap;
     gap: 1.5%;
-    border: 1px dotted red;
+    /*border: 1px dotted red;
     /*border-bottom: .4em solid var(--border-color);
     border-radius: 2.1em;*/
     /*background-color: white;*/
 }
-#over-container > * {
-    /*border: 1px solid red;*/
+/*#over-container > * {
+    border: 1px solid red;
     flex: 1 0 auto;
-}
+}*/
 #div-start-button {
     flex: 0 1 100%;
     display: flex;
@@ -42,16 +44,38 @@ body {
 }
 .div-score-container {
     flex-basis: auto;
-    flex: 1 0 auto;
+    flex-shrink: 1;
+    min-width: 12em;
+    max-height: 10em;
     text-align: center;
     text-align: middle;
-    border: 1px dotted red;
-    /*border-left: .5em solid var(--border-color);
-    border-right: .5em solid var(--border-color);*/
+    box-shadow: 0px 0px var(--shadow-blur) var(--shadow-spread-radius) var(--border-color);
     border-radius: 1em;
-    /*background-color: #030c03;*/
     color: white;
+    transition: 1s;
 }
+
+.div-score-container::after {
+    flex-basis: auto;
+    flex-shrink: 1;
+    min-width: 12em;
+    max-height: 10em;
+    text-align: center;
+    text-align: middle;
+    /*box-shadow: 0px 0px var(--shadow-blur) var(--shadow-spread-radius) var(--border-color);*/
+    border-radius: 1em;
+    color: white;
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.div-score-container > :nth-child(2) {
+    border: 1px solid red;
+    min-height: 1em;
+    padding: 2em 0em;
+}
+
 #game-container {
     flex: 1 0 35%;
     display: flex;
@@ -60,12 +84,8 @@ body {
     padding: 2%;
     gap: 3%;
     min-height: 31em;
-    border: 1px dotted red;
-    /*border: .5em solid #009600;*/
-    /*border-left: .5em solid var(--border-color);
-    border-right: .5em solid var(--border-color);*/
+    box-shadow: 0px 0px var(--shadow-blur) var(--shadow-spread-radius) var(--border-color);
     border-radius: 1em;
-    /*background-color: #030c03;*/
 }
 #game-container img {
     flex: 0 1 7em;
