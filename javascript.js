@@ -200,6 +200,9 @@ function show_game()
     {
         document.querySelector("#game-container").removeChild(document.querySelector("#game-container").lastChild);
     }
+    document.querySelector("#start-game-button").textContent = "Start again";
+    zeroGame();
+    show_score();
     let game_container = document.querySelectorAll("#game-container > *");
     game_container.forEach(function (e) {
         e.style.display = "flex";

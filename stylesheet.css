@@ -115,6 +115,7 @@ body {
     border: .5em solid var(--border-color);
     border-image: linear-gradient(120deg, var(--border-color), var(--border-color-trans));
     border-image-slice: 30;
+    transition: .5s;
 }
 .play_button:hover {
     border-image: linear-gradient(var(--border-color-trans), var(--border-color));
